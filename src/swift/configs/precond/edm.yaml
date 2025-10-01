@@ -1,0 +1,4 @@
+_target_: swift.models.precond.EDMPrecond
+sigma_min: 0
+sigma_data: 0.5
+auxiliary_dim: 1

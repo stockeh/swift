@@ -1,0 +1,4 @@
+_target_: swift.training.loss.CRPSLoss
+sigma_data: 1.0
+ensemble_size: 2
+alpha: 1.0

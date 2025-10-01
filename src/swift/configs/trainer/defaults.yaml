@@ -1,0 +1,26 @@
+# training arguments
+_target_: swift.training.trainer.Trainer
+
+total_kimg: 200000  # n steps, measured in thousands of training images.
+ema_halflife_kimg: 500  # half-life of EMA of model weights.
+ema_rampup_ratio: 0.05  # EMA ramp-up coefficient, None = disable.
+lr_rampup_kimg: 10000  # n learning rate ramp-up.
+lr_min_factor: 0.01  # min factor relative to lr [0,1]
+lr_cosine_anneal: true  # cosine annealing of learning rate.
+kimg_per_tick: 50  # interval of progress prints.
+checkpoint_ticks: 50  # n dump state, None = disable.
+profile: false
+
+# eval
+val_ticks: 50  # n eval ticks, None = disable.
+val_target_interval: 56  # 14 day roll out (on only one batch)
+val_variables:
+  - 2m_temperature
+  - 10m_u_component_of_wind
+  - 10m_v_component_of_wind
+  - mean_sea_level_pressure
+  - geopotential_500
+  - temperature_850
+  - specific_humidity_700
+  - u_component_of_wind_850
+  - v_component_of_wind_850

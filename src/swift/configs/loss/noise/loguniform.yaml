@@ -1,0 +1,3 @@
+dist: loguniform
+sigma_min: 0.02
+sigma_max: 200.0

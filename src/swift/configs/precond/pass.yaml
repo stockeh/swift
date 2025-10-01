@@ -1,0 +1,4 @@
+_target_: swift.models.precond.PassPrecond
+sigma_min: 0
+sigma_data: 1.0
+auxiliary_dim: 1

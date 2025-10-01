@@ -1,0 +1,4 @@
+num_steps: 20
+sigma_min: 0.02
+sigma_max: 200.0
+auxiliary: 0.6 # 6h interval (0.6), 12h interval (1.2), 24h interval (2.4)

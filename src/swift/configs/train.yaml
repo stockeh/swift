@@ -1,0 +1,19 @@
+defaults:
+  - _self_
+  - trainer: defaults
+  - optimizer: adam
+  - experiment: era5-swinv2-1.4-scm
+  - system: ampere
+  - finetune: null
+
+seed: 1234
+watch_wandb: false
+resume: null  # path to experiment directory to resume from
+distill: null # path to experiment directory to distill from
+dry_run: false
+
+hydra:
+  run:
+    dir: results/${experiment_name}/${oc.env:HYDRA_RUN_ID}
+  job:
+    chdir: true

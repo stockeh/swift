@@ -1,0 +1,7 @@
+_target_: swift.training.optimizers.muon.MuonWithAuxAdam
+lr: 0.02
+weight_decay: 0.01
+adam_lr: 3e-4
+adam_betas: [0.9, 0.95]
+adam_weight_decay: 0.01
+adam_eps: 1e-10

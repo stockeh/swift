@@ -1,0 +1,2 @@
+_target_: swift.training.loss.MSELoss
+sigma_data: 1.0

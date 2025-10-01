@@ -1,0 +1,7 @@
+_target_: swift.training.loss.TrigFlowLoss
+
+defaults:
+  - noise: lognormal
+  - _self_
+
+sigma_data: 1.0

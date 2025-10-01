@@ -1,0 +1,7 @@
+# Ampere GPUs V100/A100/H100
+torch:
+  backend: ddp
+  benchmark: true
+  allow_tf32: true
+  set_float32_matmul_precision: high
+  amp_type: bfloat16

@@ -1,0 +1,5 @@
+_target_: swift.models.edm2.UNet
+model_channels: 192
+channel_mult: [1, 2, 3, 4]
+attn_resolutions: [[0,0]]
+pmode: circular

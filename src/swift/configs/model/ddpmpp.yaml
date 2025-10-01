@@ -1,0 +1,11 @@
+# DDPM++ without attention
+_target_: swift.models.songunet.SongUNet
+model_channels: 8
+embedding_type: positional
+encoder_type: standard
+decoder_type: standard
+channel_mult_noise: 1
+resample_filter: [1, 1]
+channel_mult: [2, 2, 2]
+attn_resolutions: [[0,0]]
+padding_mode: circular

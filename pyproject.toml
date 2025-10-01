@@ -1,0 +1,60 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "swift"
+description = ""
+dynamic = ["version"]
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+  { name = "Jason Stock", email = "jason.stock@anl.gov" },
+  { name = "Troy Arcomano", email = "tarcomano@anl.gov" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+  "torch",
+  "torchinfo",
+  "matplotlib",
+  "cartopy",
+  "h5py>=3.13.0",                                # fixed memory leak
+  "zarr<3",                                      # needed for generation
+  "dask",
+  "wandb",
+  "einops",
+  "ezpz @ git+https://github.com/saforem2/ezpz",
+]
+
+[project.optional-dependencies]
+dev = ["black", "isort"]
+
+[project.urls]
+Documentation = "https://github.com/stockeh/swift"
+Issues = "https://github.com/stockeh/swift/issues"
+Source = "https://github.com/stockeh/swift"
+
+[tool.hatch.version]
+path = "src/swift/__about__.py"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.sdist]
+exclude = ["/.github", "/input", "/results", "/wandb", "/media", "/notebooks"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/swift"]
+
+[tool.black]
+line-length = 88
+
+[tool.isort]
+profile = "black"
+line_length = 88

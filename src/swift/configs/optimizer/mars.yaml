@@ -1,0 +1,5 @@
+_target_: swift.training.optimizers.mars.MARS
+mars_type: mars-adamw
+lr: 0.001
+lr_1d: 0.001
+weight_decay: 0.1

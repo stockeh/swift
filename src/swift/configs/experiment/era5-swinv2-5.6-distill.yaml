@@ -1,0 +1,41 @@
+# @package _global_
+defaults:
+  - /data: era5-flare-5.6
+  - /model: swinv2
+  - /loss: scm
+  - /precond: pass
+  - /solver: scm
+  - override /loss/noise: loguniform
+  - override /optimizer: adamw
+
+distill: /flare/SAFS/jstock/prod/swift/results/era5-swinv2-5.6-trigflow/003
+
+loss:
+  tangent_warmup_kimg: 3000
+
+model:
+  window_size: [16, 16]
+  shift_size: [8, 8]
+  patch_size: [1, 1]
+  ## 253M
+  depth: 12
+  dim: 1056
+  heads: 12
+
+data:
+  batch_size: 120
+  data_workers: 4
+  val_local_batch_size: 8
+    
+trainer:
+  total_kimg: 200000 # 200 mimg
+  ema_halflife_kimg: 500
+  lr_rampup_kimg: 2000 # 2 mimg
+  lr_min_factor: 0.0001
+  lr_cosine_anneal: false
+  kimg_per_tick: 1
+  checkpoint_ticks: 500
+  val_ticks: 100
+  val_target_interval: 8
+
+experiment_name: era5-swinv2-5.6-distill

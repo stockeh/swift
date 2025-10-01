@@ -1,0 +1,9 @@
+num_steps: 20
+sigma_min: 0.03
+sigma_max: 80.0
+rho: 7
+S_churn: 2.5
+S_min: 0.75
+S_max: 80
+S_noise: 1.05
+auxiliary: 0.6 # 6h interval (0.6), 12h interval (1.2), 24h interval (2.4)

@@ -1,0 +1,9 @@
+_target_: swift.models.swin.Swin
+window_size: [2, 2]
+shift_size: [1, 1]
+patch_size: [7, 7]
+depth: 4
+dim: 128
+heads: 4
+head_dim: 32
+mlp_dim: 128

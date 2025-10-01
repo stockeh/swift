@@ -1,0 +1,3 @@
+dist: lognormal
+P_mean: -0.2
+P_std: 2.2

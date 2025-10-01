@@ -1,0 +1,18 @@
+# values to HARD overwrite in the main config
+defaults:
+  - /loss: crps
+  - /optimizer: adamw
+
+optimizer:
+  lr: 1e-5
+
+#  actual finetune config
+finetune:
+  intervals: [
+    {steps: 1, kimg: 1500},
+    # {steps: 2, kimg: 1500},
+    # {steps: 3, kimg: 1000},
+    # {steps: 4, kimg: 500},
+    # {steps: 8, kimg: 500},
+  ]
+  name: multistep

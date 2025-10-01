@@ -1,0 +1,51 @@
+# @package _global_
+defaults:
+  - /data: era5-flare-1.4
+  - /model: swinv2
+  - /loss: trigflow
+  - /precond: pass
+  - /solver: 2s
+  - override /loss/noise: loguniform
+  - override /optimizer: adamw
+
+loss:
+  noise:
+    sigma_max: 200
+
+solver:
+  sigma_max: 200
+
+model:
+  window_size: [16, 16]
+  shift_size: [8, 8]
+  patch_size: [2, 2]
+  ## 253M
+  depth: 12
+  dim: 1056
+  heads: 12
+  ## 468M
+  # depth: 16
+  # dim: 1280
+  # heads: 16
+  ## 664M
+  # depth: 16
+  # dim: 1536
+  # heads: 16
+
+data:
+  batch_size: 1
+  data_workers: 4
+  val_local_batch_size: 4
+    
+trainer:
+  total_kimg: 15000 # 15 mimg
+  ema_halflife_kimg: 500
+  lr_rampup_kimg: 2000 # 2 mimg
+  lr_min_factor: 0.0001
+  lr_cosine_anneal: true
+  kimg_per_tick: 1
+  checkpoint_ticks: 500
+  val_ticks: 100
+  val_target_interval: 8
+
+experiment_name: era5-swinv2-1.4-trigflow

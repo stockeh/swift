@@ -1,0 +1,7 @@
+_target_: swift.training.loss.EDMLoss
+
+defaults:
+  - noise: lognormal
+  - _self_
+
+sigma_data: 0.5

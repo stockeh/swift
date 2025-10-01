@@ -1,0 +1,8 @@
+# defaults to be overridden by specific experiments
+batch_size: 2048  # global batch size.
+data_workers: 4
+val_local_batch_size: 32
+
+dataset:
+  residual: true
+  split: train

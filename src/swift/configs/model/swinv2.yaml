@@ -1,0 +1,9 @@
+_target_: swift.models.swinv2.SwinV2
+window_size: [2, 2]
+shift_size: [1, 1]
+patch_size: [7, 7]
+depth: 4
+dim: 128
+heads: 4
+logvar: false
+timestep_weight: 1.0
