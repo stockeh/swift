@@ -63,16 +63,19 @@ bash chain-resume.sh -s 8 -n 1 -b 1 -e era5-swinv2-1.4-scm
 ## Inference
 
 For simplicity, we run inference within one or more compute node(s) by calling [`generate.py`](src/swift/generate.py) within our virtual environment. Its important to first initialize [`ezpz`](https://github.com/saforem2/ezpz/). For example, to generate 12 members with 64 initial conditions for 15 days on 6h intervals we have
+
 ```bash
 # init venv
 module load frameworks
 source venv/bin/activate
 
-source <(curl -s https://raw.githubusercontent.com/saforem2/ezpz/refs/heads/main/src/ezpz/bin/utils.sh)
-ezpz_setup_env
+# [Optional]
+# Not necessary if you already have a venv with pytorch + mpi4py
+# source <(curl -SL https://bit.ly/ezpz-utils)
+# ezpz_setup_env
 
 # run generation
-launch python -m swift.generate \
+ezpz-launch python -m swift.generate \
   --input results/era5-swinv2-1.4-scm/011 \
   --checkpoint checkpoint-020000 \
   --members 12 \
